@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A2F982D1EC004F500E62720 /* LifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F982C1EC004F500E62720 /* LifeView.swift */; };
+		0A06718A1ECBE022001595A1 /* LifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0671891ECBE022001595A1 /* LifeView.swift */; };
 		0A2F982F1EC0050800E62720 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F982E1EC0050800E62720 /* SupportView.swift */; };
 		0A2F98311EC0A5E200E62720 /* FindHospitalMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F98301EC0A5E200E62720 /* FindHospitalMap.swift */; };
+		0A2F98341EC2D93000E62720 /* FeaturedModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F98321EC2D93000E62720 /* FeaturedModel.xcdatamodeld */; };
+		0A2F98361EC320A900E62720 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F98351EC320A900E62720 /* CoreDataManager.swift */; };
+		0A2F98381EC3237600E62720 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F98371EC3237600E62720 /* ProductInfo.swift */; };
 		0AC26F541EB98B1C00C9F710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC26F531EB98B1C00C9F710 /* AppDelegate.swift */; };
 		0AC26F561EB98B1C00C9F710 /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC26F551EB98B1C00C9F710 /* FeaturedView.swift */; };
 		0AC26F581EB98B1C00C9F710 /* AppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC26F571EB98B1C00C9F710 /* AppointmentView.swift */; };
@@ -19,9 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A2F982C1EC004F500E62720 /* LifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeView.swift; sourceTree = "<group>"; };
+		0A0671891ECBE022001595A1 /* LifeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LifeView.swift; path = ../LifeView.swift; sourceTree = "<group>"; };
 		0A2F982E1EC0050800E62720 /* SupportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		0A2F98301EC0A5E200E62720 /* FindHospitalMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindHospitalMap.swift; sourceTree = "<group>"; };
+		0A2F98331EC2D93000E62720 /* FeaturedModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeaturedModel.xcdatamodel; sourceTree = "<group>"; };
+		0A2F98351EC320A900E62720 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0A2F98371EC3237600E62720 /* ProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
 		0AC26F501EB98B1C00C9F710 /* Online_HospitalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Online_HospitalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC26F531EB98B1C00C9F710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC26F551EB98B1C00C9F710 /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
@@ -62,12 +68,15 @@
 		0AC26F521EB98B1C00C9F710 /* Online_HospitalApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A0671891ECBE022001595A1 /* LifeView.swift */,
 				0AC26F531EB98B1C00C9F710 /* AppDelegate.swift */,
+				0A2F98351EC320A900E62720 /* CoreDataManager.swift */,
 				0AC26F551EB98B1C00C9F710 /* FeaturedView.swift */,
 				0AC26F571EB98B1C00C9F710 /* AppointmentView.swift */,
-				0A2F982C1EC004F500E62720 /* LifeView.swift */,
 				0A2F982E1EC0050800E62720 /* SupportView.swift */,
+				0A2F98321EC2D93000E62720 /* FeaturedModel.xcdatamodeld */,
 				0AC26F591EB98B1C00C9F710 /* Main.storyboard */,
+				0A2F98371EC3237600E62720 /* ProductInfo.swift */,
 				0A2F98301EC0A5E200E62720 /* FindHospitalMap.swift */,
 				0AC26F5C1EB98B1C00C9F710 /* Assets.xcassets */,
 				0AC26F5E1EB98B1C00C9F710 /* LaunchScreen.storyboard */,
@@ -149,11 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A06718A1ECBE022001595A1 /* LifeView.swift in Sources */,
 				0A2F982F1EC0050800E62720 /* SupportView.swift in Sources */,
 				0A2F98311EC0A5E200E62720 /* FindHospitalMap.swift in Sources */,
-				0A2F982D1EC004F500E62720 /* LifeView.swift in Sources */,
+				0A2F98381EC3237600E62720 /* ProductInfo.swift in Sources */,
+				0A2F98341EC2D93000E62720 /* FeaturedModel.xcdatamodeld in Sources */,
 				0AC26F581EB98B1C00C9F710 /* AppointmentView.swift in Sources */,
 				0AC26F541EB98B1C00C9F710 /* AppDelegate.swift in Sources */,
+				0A2F98361EC320A900E62720 /* CoreDataManager.swift in Sources */,
 				0AC26F561EB98B1C00C9F710 /* FeaturedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +333,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A2F98321EC2D93000E62720 /* FeaturedModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A2F98331EC2D93000E62720 /* FeaturedModel.xcdatamodel */,
+			);
+			currentVersion = 0A2F98331EC2D93000E62720 /* FeaturedModel.xcdatamodel */;
+			path = FeaturedModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0AC26F481EB98B1B00C9F710 /* Project object */;
 }
