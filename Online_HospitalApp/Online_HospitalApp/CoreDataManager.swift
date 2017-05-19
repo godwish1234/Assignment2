@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 class CoreDataManager: NSObject {
+    
+    
+    
     private class func getContext() -> NSManagedObjectContext {
     
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -50,6 +53,7 @@ class CoreDataManager: NSObject {
         }
     }
     
+    /*
     class func fetchObj() -> [imageItem]{
         
         var array = [imageItem]()
@@ -58,6 +62,10 @@ class CoreDataManager: NSObject {
         
         do {
         
+            
+            
+            
+            
             let fetchResult = try getContext().fetch(fetchRequest)
             
             for item in fetchResult {
@@ -74,6 +82,7 @@ class CoreDataManager: NSObject {
                 print(img.Name)
                 print(img.Description)
                 print(img.Price)
+ 
             
             }
             
@@ -86,7 +95,16 @@ class CoreDataManager: NSObject {
         return array
     
     }
+    */
+    class func fetchSelectObj() {
+    
+        
+    
+    }
+    
+    
 }
+ 
 
 struct imageItem {
     var Name:String?

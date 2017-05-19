@@ -2,76 +2,68 @@
 //  ProductInfo.swift
 //  Online_HospitalApp
 //
-//  Created by GODWISH JAKIN on 10/5/17.
+//  Created by GODWISH JAKIN on 19/5/17.
 //  Copyright © 2017 GODWISH JAKIN. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreData
 
-class ProductInfo: UIViewController {
+class ProductInfo: NSManagedObject {
+    
+    
 
-    @IBOutlet weak var productImage: UIImageView!
-    @IBOutlet weak var productName: UITextView!
-    @IBOutlet weak var productPrice: UITextView!
-    @IBOutlet weak var productDesc: UITextView!
+    static var products : [FeaturedEntity] = []
     
-    private class func getContext() -> NSManagedObjectContext {
+    class func LoadInfo() {
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-        
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FeaturedEntity")
-        
+        let context = (UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
         
         do {
-        
-            let results = try managedContext.fetch(fetchRequest)
-            let fetchResult = try
             
-            print(results)
-        
-        } catch {
+            let req: NSFetchRequest<FeaturedEntity> = FeaturedEntity.fetchRequest()
+            products = try context.fetch(req)
             
+        } catch let err{
+            print(err)
+        }
+        
+        if products.count == 0 {
+            
+            let img = UIImage(named: "chemist.png")
+            let imageData = UIImagePNGRepresentation(img!)
+            /*
+            let storeDescription = NSEntityDescription.entity(forEntityName: "FeaturedEntity", in: context)
+            let store = Store(entity: storeDescription, insertInto: context)
+            */
+            //store.productImage = imageData
+            
+            let product = FeaturedEntity(context: context)
+            product.productName = "Panadol"
+            product.productDescription = "Headache"
+            product.productPrice = "$20"
+            //product.image = imageData
+            product.setValue(imageData, forKey: "productImage")
+            
+            //print(imageData)
+            
+            products.append(product)
+            print (product)
+            
+            /*
+            product.productName = "asasd"
+            product.productDescription = "Stomachache"
+            product.productPrice = "$30"
+            products.append(product)
+            print (product)
+ */
+            
+            try! context.save()
         }
         
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        CoreDataManager.fetchObj()
-        
-        //var data : String
-            
-        //data =  CoreDataManager.fetchObj() as String
-        
-        //print (data)
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
