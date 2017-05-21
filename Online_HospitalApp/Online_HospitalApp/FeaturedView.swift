@@ -10,6 +10,7 @@ import UIKit
 
 class FeaturedView: UIViewController {
     
+    //declare outlets
     @IBOutlet weak var FeaturedSegment: UISegmentedControl!
     @IBOutlet weak var labelTest: UILabel!
     @IBOutlet weak var Images: UIImageView!
@@ -21,7 +22,7 @@ class FeaturedView: UIViewController {
     @IBOutlet weak var imageStatic5: UIButton!
     @IBOutlet weak var imageStatic6: UIButton!
     
-    
+    //action for changing the slide animation of images
     @IBAction func TypeChanged(_ sender: Any) {
         switch FeaturedSegment.selectedSegmentIndex {
         case 0:
@@ -49,10 +50,25 @@ class FeaturedView: UIViewController {
         }
     }
     
+    //functions for changing between views
+    func infoChanged() {
+    
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "infoVC") as! ProductInfoView
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    
+    }
+    
+    //action for changing view and call the infoChanged function
+    @IBAction func changeView(_ sender: Any) {
+        infoChanged()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //CoreDataManager.storeObj()
+        ProductInfo.LoadInfo()
         
         var images = ["medShow1", "medShow2", "medShow3", "medShow4", "medShow5", "medShow6"]
         
@@ -90,6 +106,8 @@ class FeaturedView: UIViewController {
         default:
             break
         }
+        
+        
         
     }
 

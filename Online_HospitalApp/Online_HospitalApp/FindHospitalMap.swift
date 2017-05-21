@@ -11,32 +11,22 @@ import MapKit
 
 class FindHospitalMap: UIViewController, MKMapViewDelegate {
 
+    //declare an outlet
     @IBOutlet weak var mapHospital: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set the user locations
         mapHospital.showsUserLocation = true
         mapHospital.delegate = self
         mapHospital.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

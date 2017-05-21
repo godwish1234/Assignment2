@@ -25,10 +25,12 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>Allow the app to use the current location?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSLocationUsageDescription</key>
+	<string></string>
+	<key>UILaunchImageFile</key>
 	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

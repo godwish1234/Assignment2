@@ -10,11 +10,13 @@ import UIKit
 
 class SupportView: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
+    //declare a variable to alter between page view controller
     lazy var VCArr: [UIViewController] = {
         return [self.VCInstance(name: "FirstVC"),
                 self.VCInstance(name: "SecondVC")]
     }()
     
+    //set as main views
     private func VCInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
@@ -32,7 +34,7 @@ class SupportView: UIPageViewController, UIPageViewControllerDataSource, UIPageV
         
     }
     
-    
+    //function of to scroll between page view
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?{
         guard let viewControllerIndex = VCArr.index(of: viewController) else {
             return nil
@@ -73,6 +75,7 @@ class SupportView: UIPageViewController, UIPageViewControllerDataSource, UIPageV
         
     }
     
+    //create an identifier
     public func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return VCArr.count
     }

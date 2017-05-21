@@ -10,7 +10,7 @@ import UIKit
 
 class ProductCell: UITableViewCell {
     
-    
+    //declare outlets
     @IBOutlet weak var ProductImage: UIImageView!
     @IBOutlet weak var ProductName: UITextView!
     @IBOutlet weak var ProductPrice: UITextView!
@@ -25,7 +25,6 @@ class ProductCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

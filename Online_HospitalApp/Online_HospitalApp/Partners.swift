@@ -11,6 +11,7 @@ import UIKit
 
 class Partners {
     
+    //declare variables
     var Name : String
     var Image : UIImage
     
@@ -20,6 +21,7 @@ class Partners {
     }
 }
 
+//class utilities for loading the list of partners
 class Utilities {
     static var partners : [Partners] = []
     static func loadPartners() {
